@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertisseur de volume de distance et de masse</title>
+    <!-- Inclusion du fichier de styles css -->
+    <link rel="stylesheet" href="../css/convertstyle.css">
+</head>
+<body>
+    <div class="convert">
+        <h1>Convertisseur de volume</h1>
+        <div class="valeurs">
+            <!-- Les labels au - dessus des différentes zones -->
+            <label>Taille</label>
+            <label>en</label>
+            <label>Sortie en Litre</label>
+            <!-- Zone de saisi du nombre à convertir -->
+            <input type="number" name="valeur" id="valeur" placeholder="Taille">
+            <!-- Selecteur de l'unité de départ -->
+            <select name="taille" id="taille">
+                <option value="mᵌ" selected >mᵌ</option> <!-- Valeur sélectionnée par défaut -->
+                <option value="dmᵌ" >dmᵌ</option>
+                <option value="cmᵌ" >cmᵌ</option>
+                <option value="mmᵌ" >mmᵌ</option>
+                <option value="Kl">Kl</option> 
+                <option value="hl" >hl</option>
+                <option value="dal">dal</option>
+                <option value="l" >l</option>
+                <option value="dl" >dl</option> 
+                <option value="cl" >cl</option>
+                <option value="ml" >ml</option>
+
+            </select>
+            <!-- Zone de sortie du nombre converti -->
+            <input type="text" name="result" disabled id="result" placeholder="Resultat" >
+            <!-- Boutton de nettoyage des zones de saisi et de résultat -->
+            <button onclick="clearDisplayAllvolume()" class="clear">Nettoyer</button>
+            <!-- Boutton pour convertir le nombre saisi -->
+            <button onclick="convertValuevolume()">Convertir</button>
+        </div>
+    </div>
+
+    <div class="convert">
+        <h1>Convertisseur de distance</h1>
+        <div class="valeurs">
+            <!-- Les labels au - dessus des différentes zones -->
+            <label>Taille</label>
+            <label>en</label>
+            <label>Sortie en Mètre</label>
+            <!-- Zone de saisi du nombre à convertir -->
+            <input type="number" name="valeur" id="valeurdistance" placeholder="Taille">
+            <!-- Selecteur de l'unité de départ -->
+            <select name="taille" id="tailledistance">
+                <option value="Km" selected >Km</option> <!-- Valeur sélectionnée par défaut -->
+                <option value="hm" >hm</option>
+                <option value="dam">dam</option>
+                <option value="m" >m</option>
+                <option value="dm" >dm</option> 
+                <option value="cm" >cm</option>
+                <option value="mm" >mm</option>
+
+            </select>
+            <!-- Zone de sortie du nombre converti -->
+            <input type="text" name="result" disabled id="resultdistance" placeholder="Resultat" >
+            <!-- Boutton de nettoyage des zones de saisi et de résultat -->
+            <button onclick="clearDisplayAlldistance()" class="clear">Nettoyer</button>
+            <!-- Boutton pour convertir le nombre saisi -->
+            <button onclick="convertValuedistance()">Convertir</button>
+        </div>
+    </div>
+
+    <div class="convert">
+        <h1>Convertisseur de Masses</h1>
+        <div class="valeurs">
+            <!-- Les labels au - dessus des différentes zones -->
+            <label>Taille</label>
+            <label>en</label>
+            <label>Sortie en Gramme</label>
+            <!-- Zone de saisi du nombre à convertir -->
+            <input type="number" name="valeur" id="valeurmasse" placeholder="Taille">
+            <!-- Selecteur de l'unité de départ -->
+            <select name="taille" id="taillemasse">
+                <option value="Kg" selected >Kg</option> <!-- Valeur sélectionnée par défaut -->
+                <option value="hg" >hg</option>
+                <option value="dag">dag</option>
+                <option value="g" >g</option>
+                <option value="dg" >dg</option> 
+                <option value="cg" >cg</option>
+                <option value="mg" >mg</option>
+
+            </select>
+            <!-- Zone de sortie du nombre converti -->
+            <input type="text" name="result" disabled id="resultmasse" placeholder="Resultat" >
+            <!-- Boutton de nettoyage des zones de saisi et de résultat -->
+            <button onclick="clearDisplayAllmasse()" class="clear">Nettoyer</button>
+            <!-- Boutton pour convertir le nombre saisi -->
+            <button onclick="convertValuemasse()">Convertir</button>
+        </div>
+    </div>
+
+    <!-- inclusion du fichier javascript -->
+    <script src="../Javascript/convertscript.js"></script>
+</body>
+</html>

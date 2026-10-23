@@ -1,0 +1,154 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 30px;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+
+.card {
+    height: 110px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    flex: 1;
+    margin: 0 10px;
+    padding-top: 15%;
+    transition: background-color 0.3s;
+    align-items: center;
+    justify-content: center;
+}
+
+.card:hover {
+    background-color: #0056b3;
+}
+
+.hidden {
+    display: none;
+}
+
+h2 {
+    align-items: center;
+}
+
+/* convertisseur */
+
+.valeurs {
+    display: grid; /* affichage en grille des éléments contenus dans la balise portant cette classe*/
+    grid-template-columns: repeat(3, 1fr); /* définition du nombre de colonne de la grille */
+    gap: 10px; /* écart entre les cellules de la grille */
+}
+
+input, select {
+    scroll-behavior: smooth;
+    width: 96%;
+    height: 40px;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;  /* Bordures des opérations */
+    border-radius: 4px; /* arrondissement des bordures des opérations */
+}
+
+h1, label, select, p{
+    text-align: center; /* centraliser le texte */
+}
+
+select {
+    width: 100%;
+}
+
+/*propriétés de l'élémet d'id "result"*/
+#result, #resultV {
+    width: 92%;
+    margin-bottom: 10px;
+    border: 1px solid #ccc; /* Bordures des résultats */
+    border-radius: 4px; /* arrondissement des bordures des resultats */
+    background-color: #e9ecef; /* Couleur de fond pour le résultat */
+}
+
+/*propriété des boutons*/
+button {
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px; /* arrondissement des bordures des boutons */
+    background-color: #007bff;  /* Couleur de fond pour le bouton */
+    color: white;
+    cursor: pointer;
+    grid-column: span 2; /* S'étend sur 3 colonnes */
+
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.clear {
+    grid-column: span 1; /* S'étend sur 1 colonnes */
+    background-color: rgb(180, 4, 4);
+}
+
+.clear:hover{
+    background-color:  rgb(143, 1, 1);
+}
+
+.col-2{
+    grid-column: span 2;
+    height: auto;
+}
+
+
+/* Equation du second dégre*/
+
+
+#expression-fonction, #message {
+    grid-column: span 3; /* S'étend sur 3 colonnes */
+    height: 30px;
+    font-size: 15px;
+
+}
+
+#message {
+    color: red;
+    margin-bottom: 20px;
+}
+
+.col-3 {
+    grid-column: span 3;
+}
+
+/* Carre */
+
+form{
+    display: grid; /* affichage en grille des éléments contenus dans la balise portant cette classe*/
+    grid-template-columns: repeat(3, 1fr); /* définition du nombre de colonne de la grille */
+    gap: 10px; /* écart entre les cellules de la grille */
+    align-content: space-around;
+    text-align: center;
+}
+

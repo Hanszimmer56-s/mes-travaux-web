@@ -1,0 +1,413 @@
+/* =========================================
+   1. REGLAGES GENERAUX
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Verdana, sans-serif;
+    margin: 0;
+    padding: 35px 20px;
+
+    /* Fond général */
+    background: linear-gradient(135deg, #f0f4f8, #e8eef5);
+    color: #243047;
+
+    /* Organisation des trois convertisseurs */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px;
+
+    /* La page peut grandir selon son contenu */
+    min-height: 100vh;
+    height: auto;
+}
+
+
+/* =========================================
+   2. CARTES DES CONVERTISSEURS
+========================================= */
+
+.convert {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 16px;
+
+    /* Ombre légère et professionnelle */
+    box-shadow: 0 8px 25px rgba(25, 59, 99, 0.10);
+
+    /* Largeur adaptable */
+    width: 100%;
+    max-width: 360px;
+    min-width: 0;
+
+    /* Bordure discrète */
+    border: 1px solid #e0e7ef;
+
+    /* Animation initiale */
+    opacity: 0;
+    transform: translateY(25px);
+
+    animation: apparition 0.7s ease-out forwards;
+
+    /* Transitions au survol */
+    transition:
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* Apparition successive des trois cartes */
+
+.convert:nth-child(1) {
+    animation-delay: 0.15s;
+}
+
+.convert:nth-child(2) {
+    animation-delay: 0.40s;
+}
+
+.convert:nth-child(3) {
+    animation-delay: 0.65s;
+}
+
+
+/* Animation de montée et de fondu */
+
+@keyframes apparition {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Effet au survol sur ordinateur */
+
+@media (hover: hover) and (pointer: fine) {
+    .convert:hover {
+        box-shadow: 0 14px 32px rgba(25, 59, 99, 0.16);
+        border-color: #b8cde5;
+    }
+}
+
+
+/* =========================================
+   3. TITRES
+========================================= */
+
+h1 {
+    color: #193b63;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+h2 {
+    color: #193b63;
+    font-size: 21px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 22px;
+}
+
+label {
+    display: block;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 600;
+    color: #37465c;
+    margin-bottom: 8px;
+}
+
+
+/* =========================================
+   4. GRILLE DES VALEURS
+========================================= */
+
+.valeurs {
+    display: grid;
+
+    /* Trois colonnes sur les écrans suffisamment larges */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 10px;
+    width: 100%;
+}
+
+
+/* =========================================
+   5. CHAMPS ET LISTES DEROULANTES
+========================================= */
+
+input,
+select {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+
+    padding: 8px;
+    margin-bottom: 14px;
+
+    font-family: inherit;
+    font-size: 16px;
+    color: #243047;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+
+    background-color: #ffffff;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Les nombres restent lisibles */
+
+input {
+    text-align: right;
+}
+
+
+/* Les listes sont centrées */
+
+select {
+    text-align: center;
+    cursor: pointer;
+}
+
+
+/* Effet de focus */
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #2878bd;
+    box-shadow: 0 0 0 3px rgba(40, 120, 189, 0.13);
+}
+
+
+/* =========================================
+   6. AFFICHAGE DES RESULTATS
+========================================= */
+
+#result,
+#resultmasse,
+#resultdistance {
+    display: block;
+
+    width: 100%;
+    min-height: 45px;
+
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: 600;
+
+    text-align: right;
+    overflow-wrap: anywhere;
+
+    margin-bottom: 18px;
+    padding: 10px;
+
+    border: 1px solid #d7e4f2;
+    border-radius: 8px;
+
+    background-color: #edf5ff;
+    color: #193b63;
+}
+
+
+/* =========================================
+   7. BOUTONS
+========================================= */
+
+button {
+    padding: 12px 14px;
+    min-height: 44px;
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #2167a5;
+    color: white;
+
+    cursor: pointer;
+
+    /* Evite les boutons trop larges */
+    max-width: 100%;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Survol du bouton principal */
+
+button:hover {
+    background-color: #174d7e;
+}
+
+
+/* Clic sur les boutons */
+
+button:active {
+    transform: scale(0.97);
+}
+
+
+/* Focus clavier */
+
+button:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 3px;
+}
+
+
+/* Bouton Nettoyer */
+
+.clear {
+    background-color: #b40404;
+}
+
+.clear:hover {
+    background-color: #8f0101;
+}
+
+
+/* =========================================
+   8. BOUTONS DANS LA GRILLE
+========================================= */
+
+.valeurs button {
+    width: 100%;
+    min-width: 0;
+
+    /* Evite les débordements de texte */
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================
+   9. TABLETTES
+========================================= */
+
+@media (max-width: 900px) {
+    body {
+        gap: 20px;
+        padding: 25px 16px;
+    }
+
+    .convert {
+        max-width: 340px;
+        padding: 22px;
+    }
+}
+
+
+/* =========================================
+   10. TELEPHONES
+========================================= */
+
+@media (max-width: 600px) {
+    body {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 12px;
+        gap: 22px;
+    }
+
+    .convert {
+        width: 100%;
+        max-width: 440px;
+        padding: 20px;
+        border-radius: 14px;
+    }
+
+    h1 {
+        font-size: 23px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .valeurs {
+        gap: 8px;
+    }
+
+    input,
+    select {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 15px;
+        padding: 12px 8px;
+    }
+
+    #result,
+    #resultmasse,
+    #resultdistance {
+        font-size: 18px;
+    }
+}
+
+
+/* =========================================
+   11. PETITS TELEPHONES
+========================================= */
+
+@media (max-width: 360px) {
+    body {
+        padding: 15px 8px;
+    }
+
+    .convert {
+        padding: 15px;
+    }
+
+    .valeurs {
+        gap: 6px;
+    }
+
+    button {
+        padding: 10px 5px;
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================
+   12. ACCESSIBILITE : REDUCTION DES ANIMATIONS
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .convert {
+        animation: none;
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    button {
+        transition: none;
+    }
+}

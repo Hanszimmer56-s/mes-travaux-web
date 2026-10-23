@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equation</title>
+    <!-- Inclusion du fichier de styles css -->
+    <link rel="stylesheet" href="../css/equationstyle.css">
+</head>
+<body>
+    <div class="convert">
+        <h1>Equation du second dégré</h1>
+        <!-- Les labels au - dessus des différentes zones -->
+        <label>Forme d'une équation du second dégré : <em> ax<sup>2</sup> + bx + c</em></label>
+        <div class="valeurs">
+            <!-- Zone de saisi des coefficients -->
+            <input type="number" name="aCoef" id="aCoef" placeholder="Coef. a">
+            <input type="number" name="bCoef" id="bCoef" placeholder="Coef. b">
+            <input type="number" name="cCoef" id="cCoef" placeholder="Coef. c">
+
+            <label id="expression-fonction" class="hidden"></label>
+            <label id="message" class="hidden"></label>
+            <!-- Zone de sortie des solutions -->
+            
+            <input type="text" name="resultX1" disabled id="resultX1" placeholder="Resultat" class="hidden" >
+            <input type="text" name="resultX0" disabled id="resultX0" placeholder="Resultat" class="hidden" >
+            <input type="text" name="resultX2" disabled id="resultX2" placeholder="Resultat" class="hidden" >
+
+            <!-- Boutton de nettoyage des zones de saisi et de résultat -->
+            <button onclick="clearDisplayAll()" class="clear">Nettoyer</button>
+            <!-- Boutton pour convertir le nombre saisi -->
+            <button onclick="solution()">Résoudre</button>
+        </div>
+    </div>
+    <!-- inclusion du fichier javascript -->
+    <script src="../Javascript/equationscript.js"></script>
+</body>
+</html>

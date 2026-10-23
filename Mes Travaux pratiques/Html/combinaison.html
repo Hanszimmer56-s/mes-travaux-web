@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devoirs pratiques</title>
+    <link rel="stylesheet" href="../css/combinaisonstyles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Choisissez le devoir</h1>
+        <div class="card-container">
+            <div class="card" onclick="selectTaff('convertisseur')">
+                <h2>Convertisseur</h2>
+            </div>
+            <div class="card" onclick="selectTaff('equation')">
+                <h2>Equation du 2<sup>nd</sup> dégré</h2>
+            </div>
+            <div class="card" onclick="selectTaff('volume')">
+                <h2>Volume du cylindre</h2>
+            </div>
+            <div class="card" onclick="selectTaff('carre')">
+                <h2>Carre (correction)</h2>
+            </div>
+            <button onclick="selectTaff('reset')" class="clear col-2">Reinitialiser</button>
+        </div>
+
+        <!-- Convertisseur -->
+        <div id="convert" class="hidden">
+            <h1>Convertisseur</h1>
+            <div class="valeurs">
+                <!-- Les labels au - dessus des différentes zones -->
+                <label>Taille</label>
+                <label>de</label>
+                <label>en mètre</label>
+                <!-- Zone de saisi du nombre à convertir -->
+                <input type="number" name="valeur" id="valeur" placeholder="Taille">
+                <!-- Selecteur de l'unité de départ -->
+                <select name="taille" id="taille">
+                    <option value="dam" selected>dam</option> <!-- Valeur sélectionnée par défaut -->
+                    <option value="cm" >cm</option>
+                    <option value="dm" >dm</option>
+                    <option value="mm" >mm</option>
+                    <option value="km" >km</option>
+                    <option value="hm" >hm</option>
+                </select>
+                <!-- Zone de sortie du nombre converti -->
+                <input type="text" name="result" disabled id="result" placeholder="Resultat" >
+                <!-- Boutton de nettoyage des zones de saisi et de résultat -->
+                <button onclick="clearDisplayAll()" class="clear">Nettoyer</button>
+                <!-- Boutton pour convertir le nombre saisi -->
+                <button onclick="convertValue()">Convertir</button>
+            </div>
+        </div>
+
+        <!-- Equation du seconf dégré -->
+        <div id="equation" class="hidden">
+            <h1>Equation du second dégré</h1>
+            <!-- Les labels au - dessus des différentes zones -->
+            <label>Forme : <em> ax<sup>2</sup> + bx + c</em></label>
+            <div class="valeurs">
+                <!-- Zone de saisi des coefficients -->
+                <input type="number" name="aCoef" id="aCoef" placeholder="Coef. a">
+                <input type="number" name="bCoef" id="bCoef" placeholder="Coef. b">
+                <input type="number" name="cCoef" id="cCoef" placeholder="Coef. c">
+    
+                <label id="expression-fonction" class="hidden"></label>
+                <label id="message" class="hidden"></label>
+                <!-- Zone de sortie des solutions -->
+                
+                <input type="text" name="resultX1" disabled id="resultX1" placeholder="Resultat" class="hidden" >
+                <input type="text" name="resultX0" disabled id="resultX0" placeholder="Resultat" class="hidden" >
+                <input type="text" name="resultX2" disabled id="resultX2" placeholder="Resultat" class="hidden" >
+    
+                <!-- Boutton de nettoyage des zones de saisi et de résultat -->
+                <button onclick="clearDisplayAll_()" class="clear">Nettoyer</button>
+                <!-- Boutton pour convertir le nombre saisi -->
+                <button onclick="solution()">Résoudre</button>
+            </div>
+        </div>
+
+        <!-- Volume du cylindre -->
+        <div id="volume" class="hidden">
+            <h1>Volume du cylindre</h1>
+            <div class="valeurs">
+                <!-- Les labels au - dessus des différentes zones -->
+                <label>Rayon</label>
+                <label>Hauteur</label>
+                <label>Volume</label>
+                <!-- Zone de saisi du nombre à convertir -->
+                <input type="number" name="rayon" id="rayon" placeholder="en mètre">
+                <input type="number" name="hauteur" id="hauteur" placeholder="en mètre">
+                <!-- Zone de sortie du nombre converti -->
+                <input type="text" name="resultV" disabled id="resultV" placeholder="Resultat" >
+                <!-- Boutton de nettoyage des zones de saisi et de résultat -->
+                <button onclick="clearDisplayAll__()" class="clear">Nettoyer</button>
+                <!-- Boutton pour convertir le nombre saisi -->
+                <button onclick="calculVolume()">Calculer</button>
+            </div>
+        </div>
+
+        
+        <!-- Carré d'un nombre -->
+        <div id="carre" class="hidden">
+            <h1>Carré d'un nombre (Correction)</h1>
+            <div class="entrees">
+                <form action="" method="get">
+                    <label for="">Entrer une valeur :</label>
+                    <input type="text" id="num" value="nombre">
+                    <!--Ce champ prends en entrée les chaînes de caractères
+                    et non seulement les nombres -->
+                    <input type="button" value="carrée" onclick="carre()">
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../Javascript/script.js"></script>
+</body>
+</html>

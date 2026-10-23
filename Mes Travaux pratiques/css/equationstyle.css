@@ -1,0 +1,101 @@
+body{
+    font-family: 'roboto', Verdana; /* police d'écriture des éléments du body */
+    display: flex; /* affichage en continue */
+    justify-content: center; /* justification des éléments au centre*/
+    align-items: center; /* alignement au centre des éléments du body */
+    height: 100vh;
+    background-color: #f0f0f0; /* couleur d'arrière plan */
+}
+
+.convert {
+    background-color: #fff; 
+    padding: 20px;
+    border-radius: 8px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    width: 500px; 
+}
+
+.valeurs {
+    display: grid; 
+    grid-template-columns: repeat(3, 2fr); 
+    gap: 10px;
+}
+
+input, select {
+    width: 96%;
+    height: 40px;
+    font-size: 24px;
+    text-align: right;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;  
+    border-radius: 4px;
+}
+
+h1, label, select, p{
+    text-align: center;
+}
+
+select {
+    width: 100%;
+}
+
+
+#result {
+    width: 92%;
+    font-size: 24px;
+    text-align: right;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    background-color: #e9ecef; 
+}
+
+
+button {
+    padding: 15px;
+    font-size: 24px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;  
+    color: white;
+    cursor: pointer;
+    grid-column: span 2;
+
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.clear {
+    grid-column: span 1;
+    background-color: rgb(180, 4, 4);
+}
+
+.clear:hover{
+    background-color:  rgb(143, 1, 1);
+}
+
+#expression-fonction, #message {
+    grid-column: span 3; 
+    height: 30px;
+    font-size: 15px;
+
+}
+
+#message {
+    color: red;
+}
+
+.hidden {
+    display: none;
+}
+
+.col-3 {
+    grid-column: span 3;
+}
+
+.col-2{
+    grid-column: span 2;
+}
